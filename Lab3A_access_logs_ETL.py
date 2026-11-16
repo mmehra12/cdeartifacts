@@ -18,7 +18,7 @@ spark = SparkSession \
     .appName(appName) \
     .getOrCreate()
 
-input_path ="s3a://handsonworkshop/cde-workshop/access-log.txt"
+input_path ="s3a://psedemo1-buk-96e2d531/cde-workshop/access-log.txt"
 base_df=spark.read.text(input_path)
 
 split_df = base_df.select(regexp_extract('value', r'([^ ]*)', 1).alias('ip'),

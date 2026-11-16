@@ -19,10 +19,10 @@ spark = SparkSession \
     .getOrCreate()
 
 #Path of our file in s3
-input_path ="s3a://handsonworkshop/cde-workshop/PPP-Sub-150k-TX.csv"
+input_path ="s3a://psedemo1-buk-96e2d531/cde-workshop/PPP-Sub-150k-TX.csv"
 
 #This is to deal with tables existing before running this code. Not needed if you're starting fresh.
-spark.conf.set("spark.sql.legacy.allowCreatingManagedTableUsingNonemptyLocation","true")
+# spark.conf.set("spark.sql.legacy.allowCreatingManagedTableUsingNonemptyLocation","true")
 
 #Bring data into Spark from S3 Bucket
 base_df=spark.read.option("header","true").option("inferSchema","true").csv(input_path)

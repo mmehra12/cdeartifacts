@@ -11,7 +11,7 @@ val user = "<ENTER YOUR USER NAME HERE>" // Example:  "apac01"
 val appName = user + "-AvgLoan-Texas"
 val spark = SparkSession.builder.appName(appName).getOrCreate()
 
-val input_path ="s3a://handsonworkshop/cde-workshop/PPP-Sub-150k-TX.csv"
+val input_path ="s3a://psedemo1-buk-96e2d531/cde-workshop/PPP-Sub-150k-TX.csv"
 
 val base_df=spark.read.option("header","true").option("inferSchema","true").csv(input_path)
 

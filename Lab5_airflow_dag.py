@@ -62,3 +62,4 @@ with DAG(
     end = EmptyOperator(task_id="end")
 
     start >> [extract_sub_150k, extract_over_150k] >> create_reports >> end
+    # start >> extract_sub_150k >> extract_over_150k >> create_reports >> end

@@ -7,12 +7,15 @@ from cloudera.cdp.airflow.operators.cde_operator import CDEJobRunOperator
 
 
 ## Update the username
-owner = "<ENTER YOUR USER NAME HERE>" # Example: "apac01"
+owner = "<ENTER YOUR USERNAME HERE>" # Example: "apac01"
 
 DAG_name = owner + "_Airflow_Dag"
 job_name_1 = owner + "_Lab3B1_Data_Extraction_Sub_150k"
 job_name_2 = owner + "_Lab3B2_Data_Extraction_Over_150k"
 job_name_3 = owner + "_Lab3B3_Create_Reports"
+print(job_name_1)
+print(job_name_2)
+print(job_name_3)
 
 default_args = {
     'owner': owner,
@@ -25,8 +28,8 @@ default_args = {
 dag = DAG(
     DAG_name,
     default_args=default_args,
-    start_date=datetime(2023,5,3),
-    end_date=datetime(2023,5,18),
+    start_date=datetime(2026,11,16),
+    end_date=datetime(2026,11,18),
     schedule_interval='*/20 * * * *',
     catchup=False,
     is_paused_upon_creation=False
